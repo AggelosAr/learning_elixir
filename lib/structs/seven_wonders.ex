@@ -30,4 +30,12 @@ defmodule Tutorials.Structs.SevenWonders do
 # Tutorials.Structs.SevenWonders.all |> Tutorials.Structs.SevenWonders.print_names
 # Tutorials.Structs.SevenWonders.print_names(Tutorials.Structs.SevenWonders.all())
 
+
+  @spec filter_by_country([ t() ], String.t()) :: [t()]
+  def filter_by_country(wonders, country) do
+    Enum.filter(wonders, fn wonder -> wonder.country == country end)
+  end
+# Tutorials.Structs.SevenWonders.all |> Tutorials.Structs.SevenWonders.filter_by_country("India")
+
+
 end
