@@ -15,6 +15,8 @@ defmodule Tutorials.Lists.Map do
 end
 
 
+# These exampled were made while we did't pipe acc of map to reverse !
+
 # Tutorials.Lists.Rev.rev(Tutorials.Lists.Map.map([1,2,3], fn x -> x**2 end))
 
 # Tutorials.Lists.Map.map([1,2,3], fn x -> x**2 end) |> Tutorials.Lists.Rev.rev
