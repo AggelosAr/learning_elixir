@@ -23,6 +23,7 @@ defmodule Tutorials.Structs.SevenWonders do
     ]
   end
 
+  @spec print_names([t]) :: :ok
   def print_names(wonders) do
     Enum.each(wonders, fn x -> IO.puts(x.name) end)
   end
