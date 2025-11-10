@@ -5,6 +5,8 @@ defmodule Tutorials.Lists.Concat do
   end
 
 
+
+  # p is private function 
   defp concat_func([], dst) do
     dst
   end
