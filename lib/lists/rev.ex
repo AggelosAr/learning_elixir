@@ -17,3 +17,9 @@ defmodule Tutorials.Lists.Rev do
   end
 
 end
+
+
+
+# e.g.
+
+# [1,2,3,4] |> Tutorials.Lists.Rev.rev
