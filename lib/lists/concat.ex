@@ -5,12 +5,12 @@ defmodule Tutorials.Lists.Concat do
   end
 
 
-  def concat_func([], dst) do
+  defp concat_func([], dst) do
     dst
   end
 
 
-  def concat_func([h | t], dst) do
+  defp concat_func([h | t], dst) do
 
     concat_func(t, [h | dst])
   end
