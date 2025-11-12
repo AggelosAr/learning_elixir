@@ -62,5 +62,23 @@ alias Tutorials.Structs.Expense
   end
   #Expense.update_amount("Mobile", 10)
 
+  @users ["Coco", "Cece", "Louis", "Chiko"]
 
+
+  # when is called guard
+  def auth(user) when user in @users, do: {:ok, "authorized"}
+  def auth(user) when user not in @users, do: {:error, "unauthorized"}
+
+  def verify_password(user, _password) when user in @users, do: {:ok, "password verified"}
+  def verify_password(_user, _password), do: {:error, "wrong password"}
+
+  def login(user, password) do
+    with {:ok, _auth_msg} <- auth(user),
+         {:ok, _msg} <- verify_password(user, password) do
+      {:ok, "#{user} logged in successfully"}
+    else
+      {:error, msg} -> {:error, msg}
+      _ -> :unauthorized
+    end
+  end
 end
