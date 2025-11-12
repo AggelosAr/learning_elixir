@@ -23,6 +23,7 @@ defmodule Tutorials.Structs.SevenWonders do
     ]
   end
 
+  
   @spec print_names([t]) :: :ok
   def print_names(wonders) do
     Enum.each(wonders, fn x -> IO.puts(x.name) end)
@@ -44,9 +45,20 @@ defmodule Tutorials.Structs.SevenWonders do
   end
   #Tutorials.Structs.SevenWonders.in_countries_starting_with_i
 
+
   def sort_by_country_length() do
     all() |> Enum.sort(fn wonder1, wonder2 -> String.length(wonder1.country) > String.length(wonder2.country) end)
   end
   #Tutorials.Structs.SevenWonders.sort_by_country_length
+
+
+  @doc """
+  return a list of [[name, country], [name, country], [name, country] ...]
+  """
+  def name_country_list() do
+    all() |> Enum.reduce([], fn wonder, acc -> [[wonder.name, wonder.country] |  acc] end)
+  end
+ #  Tutorials.Structs.SevenWonders.name_country_list
+
 
 end
