@@ -65,7 +65,7 @@ alias Tutorials.Structs.Expense
   @users ["Coco", "Cece", "Louis", "Chiko"]
 
 
-  # when is called guard
+  # when is called guard   # TODO do this again.
   def auth(user) when user in @users, do: {:ok, "authorized"}
   def auth(user) when user not in @users, do: {:error, "unauthorized"}
 
