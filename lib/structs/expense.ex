@@ -36,5 +36,12 @@ alias Tutorials.Structs.Expense
   end
   # Expense.total(Expense.sample)
 
-  
+  def sort_by_date(expenses) do
+    #expenses |> Enum.sort(fn exp1, exp2 -> exp1.date > exp2.date end)
+
+    expenses |> Enum.sort_by(&(&1.date))
+  end
+  # Expense.sort_by_date(Expense.sample)
+
+
 end
