@@ -23,7 +23,7 @@ defmodule Tutorials.Structs.SevenWonders do
     ]
   end
 
-  
+
   @spec print_names([t]) :: :ok
   def print_names(wonders) do
     Enum.each(wonders, fn x -> IO.puts(x.name) end)
@@ -60,5 +60,11 @@ defmodule Tutorials.Structs.SevenWonders do
   end
  #  Tutorials.Structs.SevenWonders.name_country_list
 
+
+ def country_name_keyword_list() do
+
+    all() |> Enum.reduce([], fn wonder, acc -> [{String.to_atom(wonder.name), wonder.country} |  acc] end)
+  end
+#  Tutorials.Structs.SevenWonders.country_name_keyword_list
 
 end
