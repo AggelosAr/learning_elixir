@@ -42,7 +42,11 @@ defmodule Tutorials.Structs.SevenWonders do
    # all() |> Enum.filter(fn wonder -> String.match?(wonder.country, ~r/^[iI].*/) end)
     all() |> Enum.filter(fn wonder -> String.starts_with?(wonder.country, "I") end)
   end
-
-
   #Tutorials.Structs.SevenWonders.in_countries_starting_with_i
+
+  def sort_by_country_length() do
+    all() |> Enum.sort(fn wonder1, wonder2 -> String.length(wonder1.country) > String.length(wonder2.country) end)
+  end
+  #Tutorials.Structs.SevenWonders.sort_by_country_length
+
 end
