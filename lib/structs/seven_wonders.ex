@@ -67,4 +67,12 @@ defmodule Tutorials.Structs.SevenWonders do
   end
 #  Tutorials.Structs.SevenWonders.country_name_keyword_list
 
+
+
+# get all names
+# weow
+# Tutorials.Structs.SevenWonders.all |> Enum.map(fn wonder -> wonder.name end)
+# Tutorials.Structs.SevenWonders.all |> Enum.map(&(&1.name))
+# for %{name: name} <- Tutorials.Structs.SevenWonders.all, do: name
+
 end
