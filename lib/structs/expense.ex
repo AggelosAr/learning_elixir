@@ -43,5 +43,24 @@ alias Tutorials.Structs.Expense
   end
   # Expense.sort_by_date(Expense.sample)
 
+  @spec add_expense(t) :: [t()]
+  def add_expense(%Expense{} = expense) do
+    [expense | sample()]
+  end
+
+  # exp = %Expense{title: "Grocery1", date: ~D[2022-09-12], amount: 11118.99, store: "Metro"}
+
+
+  def update_amount(title, amount) do
+
+    [item] = Enum.filter(Expense.sample, fn exp -> exp.title == title end)
+
+    new_item = %{item | amount: amount}
+
+    [new_item | Expense.sample |> List.delete(item)]
+
+  end
+  #Expense.update_amount("Mobile", 10)
+
 
 end
