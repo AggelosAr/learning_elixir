@@ -38,4 +38,8 @@ defmodule Tutorials.Structs.SevenWonders do
 # Tutorials.Structs.SevenWonders.all |> Tutorials.Structs.SevenWonders.filter_by_country("India")
 
 
+  def in_countries_starting_with_i() do
+    all() |> Enum.filter(fn wonder -> String.match?(wonder.country, ~r/^[iI].*/) end)
+  end
+
 end
