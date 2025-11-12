@@ -30,4 +30,11 @@ alias Tutorials.Structs.Expense
   end
 
 
+
+  def total(expenses) do
+    expenses |> Enum.reduce(0, fn exp, acc -> exp.amount + acc end)
+  end
+  # Expense.total(Expense.sample)
+
+  
 end
