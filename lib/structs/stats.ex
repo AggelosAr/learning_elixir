@@ -24,15 +24,15 @@ defmodule Tutorials.Structs.Stats do
 
   # =============================================================================
 
-  def calc_population_mean({false, _}), do: StatsErrors.invalid_data_type()
+  defp calc_population_mean({false, _}), do: StatsErrors.invalid_data_type()
 
-  def calc_population_mean({true, nums}) do
+  defp calc_population_mean({true, nums}) do
       nums
       |> Enum.sum()
       |> mean(Enum.count(nums))
   end
 
-  def mean(sigma, sum) do
+  defp mean(sigma, sum) do
     sigma / sum
   end
 
