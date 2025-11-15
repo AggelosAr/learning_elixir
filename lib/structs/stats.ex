@@ -18,6 +18,11 @@ defmodule Tutorials.Structs.Stats do
 
   def population_mean(_), do: StatsErrors.invalid_data_type()
 
+  # =============================================================================
+
+  def sample_mean(nums), do: population_mean(nums)
+
+  # =============================================================================
 
   def calc_population_mean({false, _}), do: StatsErrors.invalid_data_type()
 
