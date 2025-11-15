@@ -4,6 +4,7 @@ defmodule Tutorials.Structs.Stats do
   # alias Tutorials.Structs.StatsValidators
   alias Tutorials.Structs.{StatsValidators, StatsErrors}
 
+  @spec population_mean(maybe_improper_list()) :: float() | {:error, <<_::96>>}
   def population_mean([]), do: StatsErrors.invalid_data_type()
 
 
@@ -15,6 +16,7 @@ defmodule Tutorials.Structs.Stats do
 
   end
 
+  def population_mean(_), do: StatsErrors.invalid_data_type()
 
 
   def calc_population_mean({false, _}), do: StatsErrors.invalid_data_type()
