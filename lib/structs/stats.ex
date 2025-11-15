@@ -59,5 +59,21 @@ defmodule Tutorials.Structs.Stats do
 
   end
 
+  # =============================================================================
+
+
+
+  def mode(nums) do
+    ranks = nums |> Enum.frequencies
+
+    ranks |> Map.values() |> Enum.max() |> helper_mode(ranks)
+
+  end
+
+  defp helper_mode(max, ranks) do
+  ranks |> Map.filter(fn {_k, v} -> v == max end) |> Map.keys
+
+  end
+
 
 end
