@@ -2,6 +2,7 @@ defmodule Tutorials.Structs.Stats do
 
   # alias Tutorials.Structs.StatsErrors
   # alias Tutorials.Structs.StatsValidators
+  require Integer
   alias Tutorials.Structs.{StatsValidators, StatsErrors}
 
   @spec population_mean(maybe_improper_list()) :: float() | {:error, <<_::96>>}
@@ -36,6 +37,27 @@ defmodule Tutorials.Structs.Stats do
     sigma / sum
   end
 
+  # =============================================================================
+
+  def calc_population_median(nums) do
+
+    count = nums |> Enum.count
+    nums
+      |> Enum.sort()
+      |> get_median(Integer.is_even(count), count )
+  end
+
+  defp get_median(nums, false, count) do
+    Enum.at(nums, div(count, 2))
+  end
+
+  defp get_median(nums, true, count) do
+    var1 = Enum.at(nums, div(count, 2))
+    var2 = Enum.at(nums, div(count - 1, 2))
+
+    (var1 + var2) / 2
+
+  end
 
 
 end
