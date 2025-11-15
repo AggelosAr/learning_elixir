@@ -1,0 +1,34 @@
+defmodule Tutorials.Structs.Stats do
+
+  # alias Tutorials.Structs.StatsErrors
+  # alias Tutorials.Structs.StatsValidators
+  alias Tutorials.Structs.{StatsValidators, StatsErrors}
+
+  def population_mean([]), do: StatsErrors.invalid_data_type()
+
+
+  def population_mean(nums) when is_list(nums) do
+
+    nums |>
+    StatsValidators.validate_num_list() |>
+    calc_population_mean()
+
+  end
+
+
+
+  def calc_population_mean({false, _}), do: StatsErrors.invalid_data_type()
+
+  def calc_population_mean({true, nums}) do
+      nums
+      |> Enum.sum()
+      |> mean(Enum.count(nums))
+  end
+
+  def mean(sigma, sum) do
+    sigma / sum
+  end
+
+
+
+end
